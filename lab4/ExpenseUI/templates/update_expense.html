@@ -1,0 +1,22 @@
+<h2>Update expense</h2>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if expense %}
+<form method="post">
+    <label>Amount:</label><br>
+    <input type="number" step="1" name="amount" value="{{ expense.amount }}"><br><br>
+
+    <label>Category:</label><br>
+    <input type="text" name="category" value="{{ expense.category }}"><br><br>
+
+    <label>Description:</label><br>
+    <input type="text" name="description" value="{{ expense.description }}"><br><br>
+
+    <button type="submit">Update</button>
+</form>
+{% endif %}
+
+<a href="/expenses">Back</a>

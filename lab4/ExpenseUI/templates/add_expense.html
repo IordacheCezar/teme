@@ -1,0 +1,26 @@
+<h2>Add expense</h2>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+<form method="post">
+    <label>Amount:</label><br>
+    <input type="number" step="0.01" name="amount"><br><br>
+
+    <label>Category:</label><br>
+    <select name="category">
+        <option value="maintenance">maintenance</option>
+        <option value="food">food</option>
+        <option value="entertainment">entertainment</option>
+        <option value="school">school</option>
+        <option value="personal">personal</option>
+    </select><br><br>
+
+    <label>Description:</label><br>
+    <input type="text" name="description"><br><br>
+
+    <button type="submit">Add</button>
+</form>
+
+<a href="/dashboard">Back</a>

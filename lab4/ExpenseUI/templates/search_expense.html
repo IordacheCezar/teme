@@ -1,0 +1,29 @@
+<h2>Search expense by category</h2>
+
+<form method="post">
+    <label>Category:</label><br>
+    <input type="text" name="category"><br><br>
+    <button type="submit">Search</button>
+</form>
+
+<a href="/dashboard">Back</a><br><br>
+
+{% if searched %}
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Description</th>
+        </tr>
+
+        {% for e in expenses %}
+        <tr>
+            <td>{{ e.id }}</td>
+            <td>{{ e.amount }}</td>
+            <td>{{ e.category }}</td>
+            <td>{{ e.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}

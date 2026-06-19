@@ -1,0 +1,29 @@
+<h2>Your expenses</h2>
+
+<a href="/dashboard">Back</a><br><br>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for e in expenses %}
+    <tr>
+        <td>{{ e.id }}</td>
+        <td>{{ e.amount }}</td>
+        <td>{{ e.category }}</td>
+        <td>{{ e.description }}</td>
+        <td>
+            <form method="post" action="/delete-expense/{{ e.id }}" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+
+            <a href="/update-expense/{{ e.id }}">Update</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
